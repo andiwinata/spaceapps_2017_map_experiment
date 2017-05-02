@@ -1,0 +1,35 @@
+<html>
+
+<head>
+  <script src="https://cdn-webgl.eegeo.com/eegeojs/early_access/latest/eegeo.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.1/leaflet.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="content" style="position: relative">
+    <div id="map" style="height: 100vh"></div>
+    <script>
+      var map = L.eeGeo.map("map", "2860549f64b04feea2aee8fa0c395dbb", {
+        center: [37.7858, -122.401],
+        zoom: 16,
+        headingDegrees: 10,
+        tiltDegrees: 10
+      });
+
+      map.setView([37.7858, -122.401], 16, {
+        headingDegrees: 10,
+        tiltDegrees: 40
+      });
+
+      var polygonPoints = [
+        [37.786617, -122.404654, 0],
+        [37.797843, -122.407057, 0],
+        [37.798962, -122.398260, 0],
+        [37.794299, -122.395234, 0]];
+      var poly = L.eeGeo.polygon(polygonPoints, { preserveAltitude: true, color: [1,1,1,1]}).addTo(map);
+    </script>
+
+  </div>
+</body>
+
+</html>
